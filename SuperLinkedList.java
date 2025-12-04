@@ -3,16 +3,53 @@ import java.util.Iterator;
 
 public class SuperLinkedList extends LinkedList<String> {
     public boolean removeVowels() {
-        return false;
+        Iterator<String> iter = this.iterator();
+        boolean removed = false;
+        while(iter.hasNext()){
+            String x = iter.next();
+            if("AEIOUaeiou".contains(x))
+            {
+                iter.remove();
+                removed = true;
+    
+            }
+        }
+        return removed;
     }
 
     public boolean removeConsonants() {
-        return false;
+        Iterator<String> iter = this.iterator();
+        boolean removed = false;
+        while(iter.hasNext()){
+            String x = iter.next();
+            if (!"AEIOUaeiou".contains(x)){
+                iter.remove();
+                removed = true;
+            }
+        }
+        return removed;
     }
 
     public LinkedList<String> removeDuplicates() {
-        return null;
-    }
+        LinkedList<String> dupe = new LinkedList<>();
+        Iterator<String> iter = this.iterator();
+        int index = 0;
+        while (iter.hasNext()){
+            String x = iter.next();
+            if (!dupe.contains(x)){
+                dupe.add(x);
+                index++;
+                    }
+            else{
+                iter.remove();
+                index++;
+                }
+                
+            }
+            return dupe;
+        }
+       
+    
 
     public LinkedList<String> concatenateStrings() {
 
