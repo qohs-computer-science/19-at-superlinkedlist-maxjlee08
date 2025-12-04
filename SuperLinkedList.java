@@ -35,15 +35,16 @@ public class SuperLinkedList extends LinkedList<String> {
         Iterator<String> iter = this.iterator();
         int index = 0;
         while (iter.hasNext()){
-            String current = iter.next();
-                for(int i = index + 1; i < this.size(); i++){
-                    if(this.get(i).equals(current)){
-                        dupe.add(this.get(i));
-                        this.remove(i);
-                        i--;
-                    }
-                }
+            String x = iter.next();
+            if (!dupe.contains(x)){
+                dupe.add(x);
                 index++;
+                    }
+            else{
+                iter.remove();
+                index++;
+                }
+                
             }
             return dupe;
         }

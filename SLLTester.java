@@ -1,9 +1,12 @@
 import java.util.Iterator;
+import java.util.LinkedList;
 
 class SLLTester {
   public static void main(String[] args) {
     SuperLinkedList list1 = new SuperLinkedList();
     SuperLinkedList list2 = new SuperLinkedList();
+    SuperLinkedList list3 = new SuperLinkedList();
+
     
     list1.add("A");
     list1.add("B");
@@ -42,10 +45,35 @@ class SLLTester {
 
     System.out.println("Remove the second list's consonants:");
     boolean removeConsonants = list2.removeConsonants();
-    System.out.println("Are the vowels removed? " + removeConsonants);
+    System.out.println("Are the consonants removed? " + removeConsonants);
     Iterator <String> remConst = list2.iterator();
     while(remConst.hasNext()){
       System.out.println(remConst.next());
     }
+    
+    list3.add("A");
+    list3.add("A");
+    list3.add("B");
+    list3.add("C");
+    list3.add("C");
+
+
+    System.out.println("___________________________________________________________________________________________");
+    System.out.println("List 3:");
+    Iterator <String> it3 = list3.iterator();
+    while(it3.hasNext()){
+      System.out.println(it3.next());
+    }
+
+    System.out.println("Remove duplicates from the third list:");
+    LinkedList<String> duplicates = list3.removeDuplicates();
+    System.out.println("Duplicates removed:");
+    Iterator <String> dupe = duplicates.iterator();
+    while(dupe.hasNext()){
+      System.out.println(dupe.next());
+    }
+    
+
+    
   } // end main
 } // end class
