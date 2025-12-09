@@ -21,7 +21,7 @@ class SLLTester {
       System.out.println(it1.next());
     }
 
-    System.out.println("Remove the first list's vowels:");
+    System.out.println("Remove list 1's vowels:");
     boolean removedVowels = list1.removeVowels();
     System.out.println("Are the vowels removed? " + removedVowels);
     Iterator <String> remVowel = list1.iterator();
@@ -43,7 +43,7 @@ class SLLTester {
       System.out.println(it2.next());
     }
 
-    System.out.println("Remove the second list's consonants:");
+    System.out.println("Remove list 2's consonants:");
     boolean removeConsonants = list2.removeConsonants();
     System.out.println("Are the consonants removed? " + removeConsonants);
     Iterator <String> remConst = list2.iterator();
@@ -65,12 +65,28 @@ class SLLTester {
       System.out.println(it3.next());
     }
 
-    System.out.println("Remove duplicates from the third list:");
+    System.out.println("Remove duplicates from list 3:");
     LinkedList<String> duplicates = list3.removeDuplicates();
     System.out.println("Duplicates removed:");
     Iterator <String> dupe = duplicates.iterator();
     while(dupe.hasNext()){
       System.out.println(dupe.next());
+    }
+    
+    System.out.println("___________________________________________________________________________________________");
+    System.out.println("Concatenate List 1:");
+    LinkedList <String> concatenate = list1.concatenateStrings();
+    Iterator <String> concat = concatenate.iterator();
+    while(concat.hasNext()){
+      System.out.println(concat.next());
+    }
+
+    System.out.println("___________________________________________________________________________________________");
+    System.out.println("Mix List 1 and 2:");
+    LinkedList<String> mixed = list1.mix(list2);
+    Iterator<String> mix = mixed.iterator();
+    while(mix.hasNext()){
+      System.out.println(mix.next());
     }
     
 
